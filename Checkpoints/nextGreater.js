@@ -1,7 +1,5 @@
-module.exports = { 
-    //param A : array of integers
-    //return a array of integers
-    nextGreater : function(A){
+// https://www.interviewbit.com/problems/nextgreater/
+nextGreater = function(A) {
   var B = [];
   for(var i=0; i<A.length; i++) {
     B[i] = -1;
@@ -13,6 +11,9 @@ module.exports = {
     }
   }
   return B;
-    }
 };
 
+//[5, 10, 10, -1]
+console.log(nextGreater([4, 5, 2, 10]));
+//[-1,-1,-1]
+console.log(nextGreater([3, 2, 1]));

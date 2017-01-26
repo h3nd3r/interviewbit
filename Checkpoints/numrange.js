@@ -1,9 +1,5 @@
-module.exports = { 
-    //param A : array of integers
-    //param B : integer
-    //param C : integer
-    //return an integer
-    numRange : function(A, B, C){
+// https://www.interviewbit.com/problems/numrange/
+numRange = function(A, B, C) {
   var count = 0;
   for(var i=0; i<A.length; i++) {
       var sum = 0;
@@ -17,5 +13,6 @@ module.exports = {
       }
   }
   return count;
-    }
 };
+// return an integer
+console.log(numRange([10, 5, 1, 0, 2], 6, 8));

@@ -1,6 +1,6 @@
-module.exports = { 
-
-    findCeil : function(A, first, l, h) {
+// https://www.interviewbit.com/problems/all-unique-permutations/
+function findCeil(A, first, l, h)
+{
     var ceilIndex = l;
     for (var i = l+1; i <= h; i++) {
         if (A[i] > first && A[i] < A[ceilIndex]) {
@@ -8,14 +8,16 @@ module.exports = {
         }
     }
     return ceilIndex;
-    },    
-    
-    permute : function(A){
+}
+
+function permutations(A)
+{
     var size = A.length;
     A.sort(function(a,b){return a-b;});
     var isFinished = false;
     var B = [];
-    while (!isFinished) {
+    while (!isFinished)
+    {
         var x = 1;
         B.push(A.slice(0,A.length));
 
@@ -29,7 +31,7 @@ module.exports = {
         if (i == -1) {
             isFinished = true;
         } else {
-            var ceilIndex = this.findCeil(A, A[i], i + 1, size - 1);
+            var ceilIndex = findCeil(A, A[i], i + 1, size - 1);
             var tmp = A[i];
             A[i] = A[ceilIndex];
             A[ceilIndex] = tmp;
@@ -39,5 +41,7 @@ module.exports = {
         }
     }
     return B;
-    }
-};
+}
+
+console.log(permutations([1,1,2]));
+console.log(permutations([1,2,3,4]));

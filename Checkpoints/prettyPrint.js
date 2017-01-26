@@ -1,7 +1,5 @@
-module.exports = { 
-    //param A : integer
-    //return a array of array of integers
-    prettyPrint : function(A){
+// https://www.interviewbit.com/problems/prettyprint/
+prettyPrint = function(A){
   var length = (A*2) - 1;
   var arr = [];
   for (var i=0; i<length; i++) {
@@ -14,6 +12,6 @@ module.exports = {
     }
   }
   return arr;
-    }
 };
 
+console.log(prettyPrint(4));
